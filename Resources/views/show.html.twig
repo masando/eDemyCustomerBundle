@@ -1,0 +1,31 @@
+<div id="product_details">
+    <div class="halfwidth columns">
+        {% if entity.webpath is not null %}
+            <div id="product_info_image">
+                <img src="{{ app.request.server.get('BASE') }}/{{ entity.webpath }}" />
+            </div>
+        {% endif %}
+        {% if entity.webpath2 is not null %}
+            <div id="product_info_image2">
+                <img src="{{ app.request.server.get('BASE') }}/{{ entity.webpath2 }}" />
+            </div>
+        {% endif %}
+        {% if entity.webpath3 is not null %}
+            <div id="product_info_image3">
+                <img src="{{ app.request.server.get('BASE') }}/{{ entity.webpath3 }}" />
+            </div>
+        {% endif %}
+    </div>
+    <div class="halfwidth product_info center">
+        <h1>{{ entity.name|upper }}</h1>
+        <h3>{{ entity.price }}&nbsp;&euro;</h3>
+        <hr/>
+        <a href="{{ path('edemy_main_cart_add', {'id': entity.id}) }}">
+            <div class="product_add_to_cart">{{ "cart.add"|trans|upper }}</div>
+        </a>
+        <hr/>
+        <div id="description">
+        {{ entity.description|raw }}
+        </div>
+    </div>
+</div>

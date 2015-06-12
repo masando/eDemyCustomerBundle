@@ -1,0 +1,103 @@
+$(document).ready(function() {
+    customerHideAll();
+    if($('#edemy_customerbundle_customer_type_0').is(':checked')) { 
+        customerShowParticular();
+    }
+    if($('#edemy_customerbundle_customer_type_1').is(':checked')) { 
+        customerShowEmpresa();
+    }
+    
+    $('#edemy_customerbundle_customer_type input').change(function() {
+        if ($(this).val() === 'particular') {
+          customerShowParticular();
+        } else if ($(this).val() === 'empresa') {
+          customerShowEmpresa();
+        } 
+    });
+  });
+
+function customerHideAll() {
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_empresa']").hide();
+    $('#edemy_customerbundle_customer_empresa').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_nombre']").hide();
+    $('#edemy_customerbundle_customer_nombre').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_apellido1']").hide();
+    $('#edemy_customerbundle_customer_apellido1').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_apellido2']").hide();
+    $('#edemy_customerbundle_customer_apellido2').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_nif']").hide();
+    $('#edemy_customerbundle_customer_nif').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_phone']").hide();
+    $('#edemy_customerbundle_customer_phone').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_email']").hide();
+    $('#edemy_customerbundle_customer_email').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_password']").hide();
+    $('#edemy_customerbundle_customer_password').hide();
+
+    $('#edemy_customerbundle_customer_enviar').hide();
+}
+
+function customerShowParticular() {
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_empresa']").hide();
+    $('#edemy_customerbundle_customer_empresa').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_nombre']").show();
+    $('#edemy_customerbundle_customer_nombre').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_apellido1']").show();
+    $('#edemy_customerbundle_customer_apellido1').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_apellido2']").show();
+    $('#edemy_customerbundle_customer_apellido2').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_nif']").show();
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_nif']").text('NIF');
+    $('#edemy_customerbundle_customer_nif').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_phone']").show();
+    $('#edemy_customerbundle_customer_phone').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_email']").show();
+    $('#edemy_customerbundle_customer_email').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_password']").show();
+    $('#edemy_customerbundle_customer_password').show();
+
+    $('#edemy_customerbundle_customer_enviar').show();
+}
+
+function customerShowEmpresa() {
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_empresa']").show();
+    $('#edemy_customerbundle_customer_empresa').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_nombre']").hide();
+    $('#edemy_customerbundle_customer_nombre').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_apellido1']").hide();
+    $('#edemy_customerbundle_customer_apellido1').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_apellido2']").hide();
+    $('#edemy_customerbundle_customer_apellido2').hide();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_nif']").show();
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_nif']").text('CIF');
+    $('#edemy_customerbundle_customer_nif').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_phone']").show();
+    $('#edemy_customerbundle_customer_phone').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_email']").show();
+    $('#edemy_customerbundle_customer_email').show();
+
+    $("#edemy_customerbundle_customer label[for='edemy_customerbundle_customer_password']").show();
+    $('#edemy_customerbundle_customer_password').show();
+
+    $('#edemy_customerbundle_customer_enviar').show();
+}

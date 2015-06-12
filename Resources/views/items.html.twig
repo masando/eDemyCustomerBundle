@@ -1,0 +1,18 @@
+{% for entity in entities %}
+    <div class="thirdwidth columns">
+        <div class="product">
+            <a href="{{ path('edemy_main_product_show', { 'product_slug': entity.slug }) }}">
+                <img src="{{ app.request.server.get('BASE') }}/{{ entity.webpath }}" />
+                <div class="product_name">
+                    {% if entity.name|length > 13 %}
+                    {{ product_prefix|trans|title }}&nbsp;
+                    {% else %}
+                    {{ product_prefix_short|trans|title }}&nbsp;
+                    {% endif %}
+                    {{ entity.name|upper }}&nbsp;
+                    {{ entity.price }}&nbsp;&euro;
+                </div>
+            </a>
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,30 @@
+{% extends 'eDemyMainBundle::base.html.twig' %}
+
+{% block content -%}
+    <div id="admin">
+        <div id="product_edit">
+            {# form(delete_form) #}
+            <br/>
+            <h1>{{ 'product.edit'|trans }}</h1>
+            {% if entity.webpath is not null %}
+                <div id="product_edit_image1">
+                    <img src="{{ app.request.server.get('BASE') }}/{{ entity.webpath }}" />
+                </div>
+            {% endif %}
+            {% if entity.webpath2 is not null %}
+                <div id="product_edit_image2">
+                    <img src="{{ app.request.server.get('BASE') }}/{{ entity.webpath2 }}" />
+                </div>
+            {% endif %}
+            {% if entity.webpath3 is not null %}
+                <div id="product_edit_image3">
+                    <img src="{{ app.request.server.get('BASE') }}/{{ entity.webpath3 }}" />
+                </div>
+            {% endif %}
+            {{ form(edit_form) }}
+            <br/>
+            <a href="{{ path('edemy_main_product_index') }}">{{ 'product.list'|trans }}</a>
+            <br/>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,5 @@
+{% extends 'eDemyMainBundle::base.html.twig' %}
+
+{% block content -%}
+    {{ include("eDemyMainBundle:Product:items.html.twig", { 'entities' : entities }) }}
+{% endblock content %}
